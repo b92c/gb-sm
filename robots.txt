@@ -1,0 +1,17 @@
+# ==============================================================================
+# robots.txt — Gracie Barra São Mateus (Guriri, ES)
+# ==============================================================================
+# Permite rastreamento irrestrito de todo o conteúdo público por todos os
+# motores de busca (Googlebot, Bingbot, etc.).
+#
+# INSTRUÇÃO PARA O DEPLOY (HostGator):
+# Ao registrar o domínio definitivo da academia, substitua 'SEU-DOMINIO.com'
+# pela URL final registrada (ex: https://graciebarrasaomateus.com.br).
+# Conforme registrado em .docs/DECISIONS.md (Decisão #4).
+# ==============================================================================
+
+User-agent: *
+Allow: /
+
+# Sitemap oficial
+Sitemap: https://SEU-DOMINIO.com/sitemap.xml
