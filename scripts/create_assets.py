@@ -310,11 +310,11 @@ def convert_bmp_to_jpg(bmp_path, jpg_path, quality="high"):
 # -------------------------------------------------------------
 def generate_modalidade_feminina():
     print("Generating modalidade-feminina.jpg...")
-    w, h = 800, 600
+    w, h = 600, 600
     buf = bytearray(w * h * 3)
 
     # Base background: Deep rich dark blue-slate #151925 with subtle vignette
-    # Center (cx=400, cy=300)
+    # Center (cx=300, cy=300)
     cx, cy = w / 2.0, h / 2.0
     max_dist = math.hypot(cx, cy)
     for y in range(h):
@@ -352,48 +352,48 @@ def generate_modalidade_feminina():
     draw_line(buf, w, h, w - 24, h - 24, w - 24, h - 24 - corner_len, (215, 24, 42), 2.5)
 
     # Circular ambient halo behind logo
-    draw_circle(buf, w, h, 400, 210, 115, (215, 24, 42), 2.0)
-    draw_circle(buf, w, h, 400, 210, 125, (42, 49, 66), 1.0)
+    draw_circle(buf, w, h, 300, 195, 110, (215, 24, 42), 2.0)
+    draw_circle(buf, w, h, 300, 195, 120, (42, 49, 66), 1.0)
 
-    # Scale logo to 180x180 and composite in center
-    scaled_logo = os.path.join(SCRATCH_DIR, "logo_180.png")
+    # Scale logo to 170x170 and composite in center
+    scaled_logo = os.path.join(SCRATCH_DIR, "logo_170.png")
     subprocess.run([
-        'sips', '-z', '180', '180',
+        'sips', '-z', '170', '170',
         os.path.join(IMG_DIR, "logo.png"),
         '--out', scaled_logo
     ], check=True, stdout=subprocess.DEVNULL)
 
     lw, lh, l_rgba = load_png_rgba(scaled_logo)
-    composite_rgba(buf, w, h, l_rgba, lw, lh, (w - lw) // 2, 210 - lh // 2)
+    composite_rgba(buf, w, h, l_rgba, lw, lh, (w - lw) // 2, 195 - lh // 2)
 
     # Red Pill Badge: "GRACIE BARRA"
     badge_txt = "GRACIE BARRA"
-    badge_tw = get_text_width(badge_txt, 15, letter_spacing=2.5)
-    badge_w = badge_tw + 36
-    badge_h = 30
+    badge_tw = get_text_width(badge_txt, 14, letter_spacing=2.2)
+    badge_w = badge_tw + 32
+    badge_h = 28
     bx1 = (w - badge_w) / 2
-    by1 = 345
+    by1 = 332
     draw_filled_rounded_rect(buf, w, h, bx1, by1, bx1 + badge_w, by1 + badge_h, 5, (215, 24, 42), alpha=1.0)
-    draw_text(buf, w, h, badge_txt, bx1 + 18, by1 + 7, 15, (255, 255, 255), 2.0, letter_spacing=2.5)
+    draw_text(buf, w, h, badge_txt, bx1 + 16, by1 + 7, 14, (255, 255, 255), 2.0, letter_spacing=2.2)
 
     # Title: "TURMA FEMININA"
     title_txt = "TURMA FEMININA"
-    title_tw = get_text_width(title_txt, 46, letter_spacing=4.0)
-    draw_text(buf, w, h, title_txt, (w - title_tw) / 2, 395, 46, (255, 255, 255), 4.0, letter_spacing=4.0)
+    title_tw = get_text_width(title_txt, 34, letter_spacing=2.5)
+    draw_text(buf, w, h, title_txt, (w - title_tw) / 2, 382, 34, (255, 255, 255), 3.2, letter_spacing=2.5)
 
     # Subtitle: "JIU-JITSU E DEFESA PESSOAL"
     sub_txt = "JIU-JITSU E DEFESA PESSOAL"
-    sub_tw = get_text_width(sub_txt, 18, letter_spacing=3.0)
-    draw_text(buf, w, h, sub_txt, (w - sub_tw) / 2, 458, 18, (201, 206, 216), 2.0, letter_spacing=3.0)
+    sub_tw = get_text_width(sub_txt, 15, letter_spacing=2.0)
+    draw_text(buf, w, h, sub_txt, (w - sub_tw) / 2, 434, 15, (201, 206, 216), 1.8, letter_spacing=2.0)
 
-    # Horizontal divider line with red diamond/dot
-    draw_line(buf, w, h, 280, 500, 520, 500, (42, 49, 66), 1.0)
-    draw_line(buf, w, h, 390, 500, 410, 500, (215, 24, 42), 2.5)
+    # Horizontal divider line with red accent centered at 300
+    draw_line(buf, w, h, 180, 476, 420, 476, (42, 49, 66), 1.0)
+    draw_line(buf, w, h, 290, 476, 310, 476, (215, 24, 42), 2.5)
 
     # Footer note: "EM BREVE · GURIRI – SAO MATEUS"
     foot_txt = "EM BREVE · GURIRI – SAO MATEUS"
-    foot_tw = get_text_width(foot_txt, 15, letter_spacing=2.0)
-    draw_text(buf, w, h, foot_txt, (w - foot_tw) / 2, 522, 15, (255, 77, 90), 1.8, letter_spacing=2.0)
+    foot_tw = get_text_width(foot_txt, 14, letter_spacing=1.8)
+    draw_text(buf, w, h, foot_txt, (w - foot_tw) / 2, 502, 14, (255, 77, 90), 1.7, letter_spacing=1.8)
 
     bmp_out = os.path.join(SCRATCH_DIR, "modalidade-feminina.bmp")
     jpg_out = os.path.join(IMG_DIR, "modalidade-feminina.jpg")
