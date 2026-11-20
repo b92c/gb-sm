@@ -126,7 +126,7 @@
           <div style="position: relative; border-radius: 6px; overflow: hidden; background: #1A1F2B;">
             <picture>
               <source srcset="assets/img/hero-academia.webp" type="image/webp">
-              <img src="assets/img/hero-academia.jpg" alt="Alunos e professores da Gracie Barra São Mateus reunidos no tatame, de kimono branco e azul" width="1206" height="500" loading="eager" fetchpriority="high" style="display: block; width: 100%; aspect-ratio: 1206 / 500; min-height: 260px; object-fit: cover; object-position: 30% 50%;">
+              <img src="assets/img/hero-academia.jpg" alt="Alunos e professores da Gracie Barra São Mateus reunidos no tatame, de kimono branco e azul" width="1206" height="500" loading="eager" fetchpriority="high" style="display: block; width: 100%; height: auto; aspect-ratio: 1206 / 500; min-height: 260px; object-fit: cover; object-position: 30% 50%;">
             </picture>
             <div style="position: absolute; left: 20px; bottom: 20px; background: #FFFFFF; color: #11141B; border-radius: 6px; padding: 14px 18px; display: flex; align-items: center; gap: 16px; box-shadow: 0 12px 32px rgba(0,0,0,0.35);">
               <span aria-hidden="true" style="display: inline-flex; justify-content: flex-end; width: 72px; height: 14px; padding-right: 10px; box-sizing: border-box; background: #11141B; border-radius: 2px;"><span style="width: 22px; height: 14px; background: var(--accent);"></span></span>
@@ -217,13 +217,15 @@
             <p style="margin: 0; max-width: 420px; font-size: 17px; line-height: 1.6; color: #3A4150;">Do primeiro treino à competição, cada aluno encontra a turma certa para a sua fase.</p>
           </div>
 
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px;">
+          <div class="gb-modalidades-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px; align-items: stretch;">
             <!-- Modalidade Gi -->
-            <article style="background: #FFFFFF; border: 1px solid #E1E4EA; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column;">
-              <picture>
-                <source srcset="assets/img/modalidade-gi.webp" type="image/webp">
-                <img src="assets/img/modalidade-gi.jpg" alt="Alunos de kimono branco no tatame da Gracie Barra São Mateus" width="600" height="450" loading="lazy" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-bottom: 1px solid #E1E4EA;">
-              </picture>
+            <article class="gb-modalidade-card" style="background: #FFFFFF; border: 1px solid #E1E4EA; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
+              <div class="gb-modalidade-media">
+                <picture>
+                  <source srcset="assets/img/modalidade-gi.webp" type="image/webp">
+                  <img src="assets/img/modalidade-gi.jpg" alt="Alunos de kimono branco no tatame da Gracie Barra São Mateus" width="600" height="450" loading="lazy" style="display: block; width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+                </picture>
+              </div>
               <div style="flex: 1; padding: 24px; display: flex; flex-direction: column; gap: 12px;">
                 <span style="align-self: flex-start; display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 3px; background: var(--blue); color: #FFFFFF; font-size: 12px; font-weight: 700; letter-spacing: 0.08em;">GI</span>
                 <h3 style="margin: 0; font-family: var(--font-heading); font-weight: 800; font-size: 30px; line-height: 1; text-transform: uppercase;">Jiu-Jitsu Gi</h3>
@@ -236,11 +238,13 @@
             </article>
 
             <!-- Modalidade No-Gi -->
-            <article style="background: #FFFFFF; border: 1px solid #E1E4EA; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column;">
-              <picture>
-                <source srcset="assets/img/modalidade-nogi.webp" type="image/webp">
-                <img src="assets/img/modalidade-nogi.jpg" alt="Tatame azul e área de preparação física da academia" width="1316" height="765" loading="lazy" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 80% 60%; border-bottom: 1px solid #E1E4EA;">
-              </picture>
+            <article class="gb-modalidade-card" style="background: #FFFFFF; border: 1px solid #E1E4EA; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
+              <div class="gb-modalidade-media">
+                <picture>
+                  <source srcset="assets/img/modalidade-nogi.webp" type="image/webp">
+                  <img src="assets/img/modalidade-nogi.jpg" alt="Tatame azul e área de preparação física da academia" width="1316" height="765" loading="lazy" style="display: block; width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 80% 60%;">
+                </picture>
+              </div>
               <div style="flex: 1; padding: 24px; display: flex; flex-direction: column; gap: 12px;">
                 <span style="align-self: flex-start; display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 3px; background: var(--accent); color: #FFFFFF; font-size: 12px; font-weight: 700; letter-spacing: 0.08em;">NO-GI</span>
                 <h3 style="margin: 0; font-family: var(--font-heading); font-weight: 800; font-size: 30px; line-height: 1; text-transform: uppercase;">No-Gi</h3>
@@ -252,11 +256,13 @@
             </article>
 
             <!-- Modalidade Kids -->
-            <article style="background: #FFFFFF; border: 1px solid #E1E4EA; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column;">
-              <picture>
-                <source srcset="assets/img/modalidade-kids.webp" type="image/webp">
-                <img src="assets/img/modalidade-kids.jpg" alt="Turma kids da Gracie Barra São Mateus reunida no tatame" width="1360" height="907" loading="lazy" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 65%; border-bottom: 1px solid #E1E4EA;">
-              </picture>
+            <article class="gb-modalidade-card" style="background: #FFFFFF; border: 1px solid #E1E4EA; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
+              <div class="gb-modalidade-media">
+                <picture>
+                  <source srcset="assets/img/modalidade-kids.webp" type="image/webp">
+                  <img src="assets/img/modalidade-kids.jpg" alt="Turma kids da Gracie Barra São Mateus reunida no tatame" width="760" height="506" loading="lazy" style="display: block; width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 65%;">
+                </picture>
+              </div>
               <div style="flex: 1; padding: 24px; display: flex; flex-direction: column; gap: 12px;">
                 <span style="align-self: flex-start; display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 3px; background: #11141B; color: #FFFFFF; font-size: 12px; font-weight: 700; letter-spacing: 0.08em;">KIDS</span>
                 <h3 style="margin: 0; font-family: var(--font-heading); font-weight: 800; font-size: 30px; line-height: 1; text-transform: uppercase;">Turma Kids</h3>
@@ -268,11 +274,13 @@
             </article>
 
             <!-- Modalidade Feminina (Card Institucional / Em breve) -->
-            <article style="background: #FFFFFF; border: 1px solid #E1E4EA; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column;">
-              <picture>
-                <source srcset="assets/img/modalidade-feminina.webp" type="image/webp">
-                <img src="assets/img/modalidade-feminina.jpg" alt="Gracie Barra São Mateus — Turma Feminina" width="800" height="600" loading="lazy" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-bottom: 1px solid #E1E4EA;">
-              </picture>
+            <article class="gb-modalidade-card" style="background: #FFFFFF; border: 1px solid #E1E4EA; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
+              <div class="gb-modalidade-media">
+                <picture>
+                  <source srcset="assets/img/modalidade-feminina.webp" type="image/webp">
+                  <img src="assets/img/modalidade-feminina.jpg" alt="Gracie Barra São Mateus — Turma Feminina" width="600" height="600" loading="lazy" style="display: block; width: 100%; height: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
+                </picture>
+              </div>
               <div style="flex: 1; padding: 24px; display: flex; flex-direction: column; gap: 12px;">
                 <span style="align-self: flex-start; display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 3px; background: #11141B; color: #FFFFFF; font-size: 12px; font-weight: 700; letter-spacing: 0.08em;">FEMININA</span>
                 <h3 style="margin: 0; font-family: var(--font-heading); font-weight: 800; font-size: 30px; line-height: 1; text-transform: uppercase;">Turma Feminina</h3>
@@ -441,7 +449,7 @@
           <div style="position: relative; flex: 1 1 300px; max-width: 380px;">
             <picture>
               <source srcset="assets/img/professor-mucio.webp" type="image/webp">
-              <img src="assets/img/professor-mucio.jpg" alt="Mestre Múcio Maia de kimono branco da Gracie Barra, apontando para a faixa preta" width="454" height="1090" loading="lazy" style="display: block; width: 100%; aspect-ratio: 3 / 5; object-fit: cover; object-position: 50% 0%; border-radius: 6px;">
+              <img src="assets/img/professor-mucio.jpg" alt="Mestre Múcio Maia de kimono branco da Gracie Barra, apontando para a faixa preta" width="454" height="1090" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 3 / 5; object-fit: cover; object-position: 50% 0%; border-radius: 6px;">
             </picture>
             <span aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--accent); border-radius: 0 0 6px 6px;"></span>
           </div>
